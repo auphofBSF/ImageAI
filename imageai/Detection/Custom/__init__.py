@@ -427,14 +427,14 @@ class DetectionModelTrainer:
                                                   obj_thresh=object_threshold, nms_thresh=nms_threshold)
 
                     result_dict = {
-                        'model_file': model_path,
+                        'model_file' : os.path.join(model_path, model_file),
                         'using_iou': iou_threshold,
                         'using_object_threshold': object_threshold,
                         'using_non_maximum_suppression': nms_threshold,
                         'average_precision': dict()
                     }
                     # print the score
-                    print("Model File: ", model_path, '\n')
+                    print("Model File: ", os.path.join(model_path, model_file), '\n')
                     print("Using IoU : ", iou_threshold)
                     print("Using Object Threshold : ", object_threshold)
                     print("Using Non-Maximum Suppression : ", nms_threshold)
